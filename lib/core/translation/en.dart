@@ -14,5 +14,28 @@ Map<String, String> en = {
   TranslationKeys.Login: 'Login',
   TranslationKeys.Finditherebuyitnow: 'Find it here, buy it now!',
   TranslationKeys.YouwantAuthentichereyougo: 'You want Authentic, here you go!',
-  TranslationKeys.WelcomeBack: 'Welcome Back',
+  TranslationKeys.FullName: 'Full Name',
+  TranslationKeys.Email: 'Email',
+  TranslationKeys.Password: 'Password',
+  TranslationKeys.ConfirmPassword: 'Confirm Password',
+  TranslationKeys.Phone: 'Phone',
+  TranslationKeys.CreateAccount: 'Create Account',
+  TranslationKeys.Createanaccount: 'Create an\naccount',
+  TranslationKeys.WelcomeBack: 'Welcome\nBack!',
+  TranslationKeys.Byclickingthe: 'By clicking the ',
+  TranslationKeys.buttonyouagreetothepublicoffer:
+      ' button, you agree\nto the public offer',
+
+  ///////////////--Validations--//////////////////
+  TranslationKeys.NameRequired: 'Name is required',
+  TranslationKeys.NameLength: 'Name must be at least 3 characters long',
+  TranslationKeys.EmailRequired: 'Email is required',
+  TranslationKeys.EmailValid: 'Enter a valid email address',
+  TranslationKeys.PasswordRequired: 'Password is required',
+  TranslationKeys.PasswordLength: 'Password must be at least 6 characters long',
+  TranslationKeys.ConfirmPasswordRequired: 'Confirm password is required',
+  TranslationKeys.PasswordNotMatch: 'Passwords do not match',
+  TranslationKeys.PhoneRequired: 'Phone number is required',
+  TranslationKeys.PhoneValid: 'Enter a valid 11-digit phone number',
+  ///////////////////////////////////////////////
 };

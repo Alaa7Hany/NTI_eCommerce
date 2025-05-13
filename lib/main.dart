@@ -12,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   await TranslationHelper.setLanguage();
+  await TranslationHelper.changeLanguage(true);
   runApp(const MyApp());
 }
 

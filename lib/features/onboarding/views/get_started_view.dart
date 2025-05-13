@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_assets.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
+import 'package:nti_ecommerce/features/auth/views/login_view.dart';
+import 'package:nti_ecommerce/features/auth/views/register_view.dart';
 import 'package:nti_ecommerce/features/onboarding/views/widgets/my_outlined_button.dart';
 
 import '../../../core/helper/responsive.dart';
@@ -17,6 +20,7 @@ class GetStartedView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Background Image
           Container(
             width: double.infinity,
             height: double.infinity,
@@ -27,6 +31,7 @@ class GetStartedView extends StatelessWidget {
               ),
             ),
           ),
+          // Gradient Overlay
           Container(
             width: double.infinity,
             height: double.infinity,
@@ -41,6 +46,7 @@ class GetStartedView extends StatelessWidget {
                 end: Alignment.bottomCenter,
               ),
             ),
+            // Content
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -63,11 +69,18 @@ class GetStartedView extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: ResponsiveHelper.h(context, height: 24)),
-                MyButton(title: TranslationKeys.Login.tr, onPressed: () {}),
+                MyButton(
+                  title: TranslationKeys.Login.tr,
+                  onPressed: () {
+                    NavHelper.push(() => LoginView());
+                  },
+                ),
                 SizedBox(height: ResponsiveHelper.h(context, height: 15)),
                 MyOutlinedButton(
                   title: TranslationKeys.Register.tr,
-                  onPressed: () {},
+                  onPressed: () {
+                    NavHelper.push(() => RegisterView());
+                  },
                 ),
               ],
             ),

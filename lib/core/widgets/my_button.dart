@@ -10,12 +10,14 @@ class MyButton extends StatelessWidget {
     this.onPressed,
     this.textStyle,
     this.radius = 5,
+    this.isLoading = false,
   });
 
   final String title;
   final void Function()? onPressed;
   final TextStyle? textStyle;
   final double radius;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +28,25 @@ class MyButton extends StatelessWidget {
         onPressed: onPressed,
 
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
+          backgroundColor: isLoading ? AppColors.grey : AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               ResponsiveHelper.w(context, width: radius),
             ),
           ),
         ),
-        child: Text(
-          title,
-          style: (textStyle ?? AppTextStyles.f20w600(context)).copyWith(
-            color: AppColors.white,
-          ),
-        ),
+        child:
+            isLoading
+                ? CircularProgressIndicator(
+                  padding: EdgeInsets.all(10),
+                  color: AppColors.primary,
+                )
+                : Text(
+                  title,
+                  style: (textStyle ?? AppTextStyles.f20w600(context)).copyWith(
+                    color: AppColors.white,
+                  ),
+                ),
       ),
     );
   }

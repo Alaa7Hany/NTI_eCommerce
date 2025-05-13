@@ -21,5 +21,30 @@ abstract class TranslationKeys {
   static const String Finditherebuyitnow = 'Find it here, buy it now!';
   static const String YouwantAuthentichereyougo =
       'You want Authentic, here you go!';
-  static const String WelcomeBack = 'Welcome Back';
+  static const String FullName = 'Full Name';
+  static const String Email = 'Email';
+  static const String Password = 'Password';
+  static const String ConfirmPassword = 'Confirm Password';
+  static const String Phone = 'Phone';
+  static const String CreateAccount = 'Create Account';
+  static const String Createanaccount = 'Create an\naccount';
+  static const String WelcomeBack = 'Welcome\nBack!';
+  static const String Byclickingthe = 'By clicking the ';
+  static const String buttonyouagreetothepublicoffer =
+      ' button, you agree to the public offer';
+
+  ///////////////--Validations--//////////////////
+  static const String NameRequired = 'Name is required';
+  static const String NameLength = 'Name must be at least 3 characters long';
+  static const String EmailRequired = 'Email is required';
+  static const String EmailValid = 'Enter a valid email address';
+  static const String PasswordRequired = 'Password is required';
+  static const String PasswordLength =
+      'Password must be at least 6 characters long';
+  static const String ConfirmPasswordRequired = 'Confirm password is required';
+  static const String PasswordNotMatch = 'Passwords do not match';
+  static const String PhoneRequired = 'Phone number is required';
+  static const String PhoneValid = 'Enter a valid 11-digit phone number';
+
+  ///////////////////////////////////////////////
 }
