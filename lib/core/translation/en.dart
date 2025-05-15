@@ -38,4 +38,18 @@ Map<String, String> en = {
   TranslationKeys.PhoneRequired: 'Phone number is required',
   TranslationKeys.PhoneValid: 'Enter a valid 11-digit phone number',
   ///////////////////////////////////////////////
+
+  ////////////----Profile----//////////////////////
+  TranslationKeys.Profile: 'Profile',
+  TranslationKeys.MyProfile: 'My Profile',
+  TranslationKeys.MyOrders: 'My Orders',
+  TranslationKeys.MyFavorites: 'My Favorites',
+  TranslationKeys.Settings: 'Settings',
+  TranslationKeys.LogOut: 'Log Out',
+  TranslationKeys.Home: 'Home',
+  TranslationKeys.Items: 'Items',
+  TranslationKeys.Save: 'Save',
+  TranslationKeys.Language: 'Language',
+
+  ///////////////////////////////////////////////
 };

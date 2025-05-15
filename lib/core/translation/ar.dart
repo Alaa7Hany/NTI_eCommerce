@@ -39,4 +39,18 @@ Map<String, String> ar = {
   TranslationKeys.PhoneRequired: 'رقم الهاتف مطلوب',
   TranslationKeys.PhoneValid: 'أدخل رقم هاتف مكون من 11 رقمًا',
   ///////////////////////////////////////////////
+
+  ////////////----Profile----//////////////////////
+  TranslationKeys.Profile: 'الملف الشخصي',
+  TranslationKeys.MyProfile: 'ملفي الشخصي',
+  TranslationKeys.MyOrders: 'طلباتي',
+  TranslationKeys.MyFavorites: 'المفضلة',
+  TranslationKeys.Settings: 'الإعدادات',
+  TranslationKeys.LogOut: 'تسجيل الخروج',
+  TranslationKeys.Home: 'الرئيسية',
+  TranslationKeys.Items: 'العناصر',
+  TranslationKeys.Save: 'حفظ',
+  TranslationKeys.Language: 'اللغة',
+
+  ///////////////////////////////////////////////
 };

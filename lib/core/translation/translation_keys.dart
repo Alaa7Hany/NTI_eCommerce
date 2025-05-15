@@ -47,4 +47,16 @@ abstract class TranslationKeys {
   static const String PhoneValid = 'Enter a valid 11-digit phone number';
 
   ///////////////////////////////////////////////
+
+  ////////////----Profile----//////////////////////
+  static const String Profile = 'Profile';
+  static const String MyProfile = 'My Profile';
+  static const String MyOrders = 'My Orders';
+  static const String MyFavorites = 'My Favorites';
+  static const String Settings = 'Settings';
+  static const String LogOut = 'Log Out';
+  static const String Home = 'Home';
+  static const String Items = 'Items';
+  static const String Save = 'Save';
+  static const String Language = 'Language';
 }

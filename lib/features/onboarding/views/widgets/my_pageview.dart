@@ -30,7 +30,7 @@ class MyPageview extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgWrappe(
+              SvgWrapper(
                 assetName: pages[index]['image'],
                 fit: BoxFit.cover,
                 height: ResponsiveHelper.h(context, height: 300),

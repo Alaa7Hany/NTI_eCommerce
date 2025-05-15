@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
-class SvgWrappe extends StatelessWidget {
+class SvgWrapper extends StatelessWidget {
   final String assetName;
   final double? width;
   final double? height;
@@ -10,7 +10,7 @@ class SvgWrappe extends StatelessWidget {
   final Widget? placeholder;
   final Color? color;
 
-  const SvgWrappe({
+  const SvgWrapper({
     super.key,
     required this.assetName,
     this.width,

@@ -12,4 +12,13 @@ abstract class AppAssets {
   static const String phoneIcon = '${_basePath}phone_icon.svg';
   static const String userIcon = '${_basePath}user_icon.svg';
   static const String eyeIcon = '${_basePath}eye_icon.svg';
+  static const String arrowRightIcon = '${_basePath}arrow_right_icon.svg';
+  static const String bagIcon = '${_basePath}bag_icon.svg';
+  static const String cartIcon = '${_basePath}cart_icon.svg';
+  static const String favouriteIcon = '${_basePath}favourite_icon.svg';
+  static const String homeIcon = '${_basePath}home_icon.svg';
+  static const String logoutIcon = '${_basePath}logout_icon.svg';
+  static const String profileIcon = '${_basePath}profile_icon.svg';
+  static const String settingsIcon = '${_basePath}settings_icon.svg';
+  static const String profileImage = '${_basePath}profile_image.png';
 }

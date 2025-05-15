@@ -44,7 +44,7 @@ class _SplashViewState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SvgWrappe(assetName: AppAssets.splash, fit: BoxFit.contain),
+        child: SvgWrapper(assetName: AppAssets.splash, fit: BoxFit.contain),
       ),
     );
   }

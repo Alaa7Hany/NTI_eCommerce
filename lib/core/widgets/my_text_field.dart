@@ -64,7 +64,7 @@ class MyTextField extends StatelessWidget {
         horizontal: ResponsiveHelper.w(context, width: 10),
       ),
 
-      prefixIcon: SvgWrappe(assetName: icon, fit: BoxFit.scaleDown),
+      prefixIcon: SvgWrapper(assetName: icon, fit: BoxFit.scaleDown),
       suffixIcon: suffixIcon,
       border: _border(context, AppColors.grey),
       focusedErrorBorder: _border(context, AppColors.primary),
@@ -167,7 +167,7 @@ class MyTextField extends StatelessWidget {
         icon: AppAssets.lockIcon,
         suffixIcon: IconButton(
           onPressed: onSuffixTapped,
-          icon: SvgWrappe(assetName: AppAssets.eyeIcon),
+          icon: SvgWrapper(assetName: AppAssets.eyeIcon),
         ),
       ),
     );
