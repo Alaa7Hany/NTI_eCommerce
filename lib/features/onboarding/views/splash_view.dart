@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/widgets/svg_wrapper.dart';

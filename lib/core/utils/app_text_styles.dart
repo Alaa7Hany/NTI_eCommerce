@@ -94,6 +94,17 @@ abstract class AppTextStyles {
     );
   }
 
+  static TextStyle f20w500(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 20),
+      fontWeight: FontWeight.w500,
+      color: color,
+    );
+  }
+
   static TextStyle f20w600(
     BuildContext context, {
     Color color = AppColors.black,

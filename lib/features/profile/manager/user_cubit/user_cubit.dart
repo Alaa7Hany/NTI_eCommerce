@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nti_ecommerce/core/cache/cache_helper.dart';
+import 'package:nti_ecommerce/core/cache/cache_keys.dart';
+import 'package:nti_ecommerce/core/translation/translation_helper.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
@@ -10,7 +13,7 @@ class UserCubit extends Cubit<UserState> {
   TextEditingController updateEmailController = TextEditingController();
   TextEditingController updatePhoneController = TextEditingController();
   GlobalKey<FormState> updateFormKey = GlobalKey<FormState>();
-
+  bool isEnglish = true;
   void updateUser() {
     emit(UserUpdateLoadingState());
     // TODO: Simulate a network call
@@ -32,7 +35,9 @@ class UserCubit extends Cubit<UserState> {
     });
   }
 
-  void changeLanguage(String language) {
-    emit(UserLanguageState(language));
+  void changeLanguage() async {
+    isEnglish = !isEnglish;
+    await TranslationHelper.changeLanguage(isEnglish);
+    emit(UserLanguageState());
   }
 }

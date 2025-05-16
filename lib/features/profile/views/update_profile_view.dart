@@ -1,28 +1,19 @@
 import 'dart:io';
-import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:nti_ecommerce/core/cache/cache_data.dart';
-import 'package:nti_ecommerce/core/cache/cache_keys.dart';
-import 'package:nti_ecommerce/core/helper/my_logger.dart';
-import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
-import 'package:nti_ecommerce/core/utils/app_assets.dart';
-import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
 import 'package:nti_ecommerce/core/widgets/image_manager/image_manager_view.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
-import 'package:nti_ecommerce/core/widgets/my_rotator.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
-import 'package:nti_ecommerce/core/widgets/svg_wrapper.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_cubit.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/profile_image_widget.dart';
 
 import '../../../core/utils/app_colors.dart';
+import '../../../core/widgets/my_appbar.dart';
 import '../manager/user_cubit/user_state.dart';
 
 class UpdateProfileView extends StatelessWidget {
@@ -31,21 +22,7 @@ class UpdateProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          TranslationKeys.Profile.tr,
-          style: AppTextStyles.f18w600(context, color: AppColors.black),
-        ),
-        // Rotate the arrow in case of language change
-        leading: InkWell(
-          onTap: () {
-            NavHelper.pop();
-          },
-          child: MyRotator(icon: AppAssets.arrowRightIcon),
-        ),
-      ),
+      appBar: MyAppBar.appBar(title: TranslationKeys.Settings.tr),
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: ResponsiveHelper.w(context, width: 20),

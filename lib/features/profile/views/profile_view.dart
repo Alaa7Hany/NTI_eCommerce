@@ -5,6 +5,7 @@ import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/utils/app_assets.dart';
 import 'package:nti_ecommerce/core/utils/app_colors.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
+import 'package:nti_ecommerce/features/profile/views/settings_view.dart';
 import 'package:nti_ecommerce/features/profile/views/update_profile_view.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/options_row_widget.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/profile_image_widget.dart';
@@ -31,7 +32,7 @@ List<Map<String, dynamic>> options = [
   {
     'icon': AppAssets.settingsIcon,
     'title': TranslationKeys.Settings.tr,
-    'navTo': UpdateProfileView(),
+    'navTo': SettingsView(),
   },
 ];
 

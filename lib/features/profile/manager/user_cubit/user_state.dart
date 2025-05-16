@@ -46,6 +46,5 @@ class UserImagePickedState extends UserState {
 }
 
 class UserLanguageState extends UserState {
-  final String language;
-  UserLanguageState(this.language);
+  UserLanguageState();
 }

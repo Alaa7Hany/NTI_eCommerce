@@ -12,8 +12,7 @@ import '../../../core/utils/app_colors.dart';
 import '../manager/login_cubit/login_state.dart';
 
 class LoginView extends StatelessWidget {
-  //TODO: put const back
-  LoginView({super.key});
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {

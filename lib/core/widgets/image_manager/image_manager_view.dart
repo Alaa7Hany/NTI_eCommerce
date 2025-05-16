@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../helper/my_logger.dart';
 import 'cubit/image_manager_cubit.dart';
 import 'cubit/image_manager_state.dart';
 
