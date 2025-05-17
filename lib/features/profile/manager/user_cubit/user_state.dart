@@ -6,10 +6,7 @@ class UserInitialState extends UserState {}
 
 class UserLoadingState extends UserState {}
 
-class UserSuccessState extends UserState {
-  final String message;
-  UserSuccessState(this.message);
-}
+class UserSuccessState extends UserState {}
 
 class UserErrorState extends UserState {
   final String error;

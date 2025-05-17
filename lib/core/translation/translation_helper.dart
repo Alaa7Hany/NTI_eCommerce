@@ -34,15 +34,15 @@ class TranslationHelper implements Translations {
         key: CacheKeys.langKey,
         value: CacheKeys.keyAR,
       );
-      await Get.updateLocale(TranslationKeys.localeAR);
       CacheData.lang = CacheKeys.keyAR;
+      await Get.updateLocale(TranslationKeys.localeAR);
     } else {
       await CacheHelper.saveData(
         key: CacheKeys.langKey,
         value: CacheKeys.keyEN,
       );
-      await Get.updateLocale(TranslationKeys.localeEN);
       CacheData.lang = CacheKeys.keyEN;
+      await Get.updateLocale(TranslationKeys.localeEN);
     }
   }
 }

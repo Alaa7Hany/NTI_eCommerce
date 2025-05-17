@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:nti_ecommerce/core/helper/my_snackbar.dart';
+import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
 import 'package:nti_ecommerce/features/auth/manager/login_cubit/login_cubit.dart';
+import 'package:nti_ecommerce/features/home/views/main_app_view.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../manager/login_cubit/login_state.dart';
@@ -82,19 +85,9 @@ class LoginView extends StatelessWidget {
                         BlocConsumer<LoginCubit, LoginState>(
                           listener: (context, state) {
                             if (state is LoginError) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(state.error),
-                                  backgroundColor: AppColors.primary,
-                                ),
-                              );
+                              MySnackbar.error(context, state.error);
                             } else if (state is LoginSuccess) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(state.message),
-                                  backgroundColor: AppColors.green,
-                                ),
-                              );
+                              NavHelper.pushReplaceAll(() => MainAppView());
                             }
                           },
                           builder: (context, state) {

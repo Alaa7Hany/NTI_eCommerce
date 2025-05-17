@@ -1,3 +1,5 @@
+import 'package:nti_ecommerce/features/auth/data/models/user_model.dart';
+
 abstract class LoginState {}
 
 class LoginInitial extends LoginState {}
@@ -5,9 +7,8 @@ class LoginInitial extends LoginState {}
 class LoginLoading extends LoginState {}
 
 class LoginSuccess extends LoginState {
-  //TODO: Stor the user model recived in this state from api
-  final String message;
-  LoginSuccess(this.message);
+  final UserModel userModel;
+  LoginSuccess(this.userModel);
 }
 
 class LoginError extends LoginState {

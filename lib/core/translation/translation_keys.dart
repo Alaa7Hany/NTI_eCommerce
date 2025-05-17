@@ -45,6 +45,7 @@ abstract class TranslationKeys {
   static const String PasswordNotMatch = 'Passwords do not match';
   static const String PhoneRequired = 'Phone number is required';
   static const String PhoneValid = 'Enter a valid 11-digit phone number';
+  static const String fillAllFields = 'Please fill all fields';
 
   ///////////////////////////////////////////////
 

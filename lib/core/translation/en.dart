@@ -37,6 +37,7 @@ Map<String, String> en = {
   TranslationKeys.PasswordNotMatch: 'Passwords do not match',
   TranslationKeys.PhoneRequired: 'Phone number is required',
   TranslationKeys.PhoneValid: 'Enter a valid 11-digit phone number',
+  TranslationKeys.fillAllFields: 'Please fill all fields',
   ///////////////////////////////////////////////
 
   ////////////----Profile----//////////////////////

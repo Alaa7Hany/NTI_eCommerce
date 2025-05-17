@@ -38,6 +38,7 @@ Map<String, String> ar = {
   TranslationKeys.PasswordNotMatch: 'كلمات المرور غير متطابقة',
   TranslationKeys.PhoneRequired: 'رقم الهاتف مطلوب',
   TranslationKeys.PhoneValid: 'أدخل رقم هاتف مكون من 11 رقمًا',
+  TranslationKeys.fillAllFields: 'يرجى ملء جميع الحقول',
   ///////////////////////////////////////////////
 
   ////////////----Profile----//////////////////////

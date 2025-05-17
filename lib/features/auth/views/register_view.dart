@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:nti_ecommerce/core/helper/my_snackbar.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
+import 'package:nti_ecommerce/features/auth/views/login_view.dart';
+import '../../../core/helper/nav_helper.dart';
 import '../../../core/utils/app_colors.dart';
 import '../manager/register_cubit/register_cubit.dart';
 import '../manager/register_cubit/register_state.dart';
@@ -141,19 +144,10 @@ class RegisterView extends StatelessWidget {
                         BlocConsumer<RegisterCubit, RegisterState>(
                           listener: (context, state) {
                             if (state is RegisterError) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(state.error),
-                                  backgroundColor: AppColors.primary,
-                                ),
-                              );
+                              MySnackbar.error(context, state.error);
                             } else if (state is RegisterSuccess) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(state.message),
-                                  backgroundColor: AppColors.green,
-                                ),
-                              );
+                              MySnackbar.success(context, state.message);
+                              NavHelper.pushReplaceAll(() => LoginView());
                             }
                           },
                           builder: (context, state) {
@@ -161,7 +155,7 @@ class RegisterView extends StatelessWidget {
                               title: TranslationKeys.CreateAccount.tr,
                               isLoading: state is RegisterLoading,
                               onPressed: () {
-                                cubit.register();
+                                cubit.onCreateAccountPressed();
                               },
                             );
                           },

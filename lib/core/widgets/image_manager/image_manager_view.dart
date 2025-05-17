@@ -29,6 +29,8 @@ class ImageManagerView extends StatelessWidget {
         },
         builder: (context, state) {
           return InkWell(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () {
               ImageManagerCubit.get(context).pickImage();
             },
