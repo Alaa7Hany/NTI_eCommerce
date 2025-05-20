@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:nti_ecommerce/core/cache/cache_helper.dart';
+import 'package:nti_ecommerce/core/cache/cache_keys.dart';
+import 'package:nti_ecommerce/core/helper/my_logger.dart';
 import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_assets.dart';
@@ -8,6 +12,7 @@ import 'package:nti_ecommerce/features/auth/views/login_view.dart';
 import 'package:nti_ecommerce/features/auth/views/register_view.dart';
 import 'package:nti_ecommerce/features/onboarding/views/widgets/my_outlined_button.dart';
 
+import '../../../core/cache/cache_data.dart';
 import '../../../core/helper/responsive.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_text_styles.dart';
@@ -17,6 +22,9 @@ class GetStartedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CacheData.firstTime = false;
+    CacheHelper.saveData(key: CacheKeys.firstTime, value: CacheData.firstTime);
+
     return Scaffold(
       body: Stack(
         children: [

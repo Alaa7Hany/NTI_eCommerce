@@ -1,13 +1,17 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nti_ecommerce/core/cache/cache_keys.dart';
 
 import 'package:nti_ecommerce/core/translation/translation_helper.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/features/profile/data/repo/user_repo.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_state.dart';
 
+import '../../../../core/cache/cache_data.dart';
+import '../../../../core/cache/cache_helper.dart';
 import '../../../auth/data/models/user_model.dart';
 
 class UserCubit extends Cubit<UserState> {
@@ -26,18 +30,21 @@ class UserCubit extends Cubit<UserState> {
 
   XFile? imageFile;
 
-  void getUserData() async {
+  Future<bool> getUserData() async {
     emit(UserLoadingState());
     var result = await UserRepo().getUserData();
+    bool flag = false;
     result.fold(
       (error) {
         emit(UserErrorState(error));
       },
       (userModel) {
+        flag = true;
         this.userModel = userModel;
         emit(UserSuccessState());
       },
     );
+    return flag;
   }
 
   void updateUser() async {
@@ -70,5 +77,29 @@ class UserCubit extends Cubit<UserState> {
     await TranslationHelper.changeLanguage(isEnglish);
 
     emit(UserLanguageState());
+  }
+
+  void deletAccount() async {
+    emit(UserDeleteLoadingState());
+    var result = await UserRepo().deleteAccount();
+    result.fold(
+      (error) {
+        emit(UserDeleteErrorState(error));
+      },
+      (message) {
+        logOut();
+        emit(UserDeleteSuccessState(message));
+      },
+    );
+  }
+
+  void logOut() async {
+    await CacheHelper.removeData(key: CacheKeys.accessToken);
+    CacheData.accessToken = null;
+    await CacheHelper.removeData(key: CacheKeys.refreshToken);
+    CacheData.refreshToken = null;
+    await CacheHelper.removeData(key: CacheKeys.loggedIn);
+    CacheData.loggedIn = null;
+    emit(UserLogoutState('Logged out successfully'));
   }
 }

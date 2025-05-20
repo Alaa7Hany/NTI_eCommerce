@@ -25,7 +25,8 @@ Map<String, String> ar = {
   TranslationKeys.Byclickingthe: 'بالنقر على ',
   TranslationKeys.buttonyouagreetothepublicoffer:
       '  فإنك توافق على العرض العام',
-
+  TranslationKeys.DontHaveACoount: 'ليس لديك حساب؟',
+  TranslationKeys.AlreadyHaveAnAccount: 'هل لديك حساب بالفعل؟',
   ///////////////--Validations--//////////////////
   TranslationKeys.NameRequired: 'الاسم مطلوب',
   TranslationKeys.NameLength: 'يجب أن يتكون الاسم من 3 أحرف على الأقل',
@@ -52,6 +53,15 @@ Map<String, String> ar = {
   TranslationKeys.Items: 'العناصر',
   TranslationKeys.Save: 'حفظ',
   TranslationKeys.Language: 'اللغة',
+  TranslationKeys.DeleteAccount: 'حذف الحساب',
 
   ///////////////////////////////////////////////
+
+  /////////////--Home--//////////////////////
+  TranslationKeys.SearchanyProduct: 'ابحث عن أي منتج..',
+
+  TranslationKeys.Recommended: 'موصى به',
+
+  TranslationKeys.AllFeatured: 'جميع المميزات',
+  TranslationKeys.AndMore: 'و المزيد !!',
 };

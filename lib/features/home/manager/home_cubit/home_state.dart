@@ -18,3 +18,5 @@ class HomeChangeIndexState extends HomeState {
   final int currentIndex;
   HomeChangeIndexState(this.currentIndex);
 }
+
+class HomeSliderChangedState extends HomeState {}

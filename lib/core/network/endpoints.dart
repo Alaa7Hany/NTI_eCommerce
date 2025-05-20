@@ -7,4 +7,10 @@ abstract class EndPoints {
   static const String updateProfile = 'update_profile';
   static const String getUserData = 'get_user_data';
   static const String deleteUser = 'delete_user';
+  static const String getSliders = 'sliders';
+  static const String getCategories = 'categories';
+  static const String getProducts = 'products';
+  static const String addProductToFavourite = 'add_to_favorite';
+  static const String bestSellerProducts = 'best_seller_products';
+  static const String topRatedProducts = 'top_rated_products';
 }

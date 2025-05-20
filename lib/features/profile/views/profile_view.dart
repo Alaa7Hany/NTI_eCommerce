@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:nti_ecommerce/core/cache/cache_data.dart';
 import 'package:nti_ecommerce/core/cache/cache_helper.dart';
@@ -15,8 +18,11 @@ import 'package:nti_ecommerce/features/profile/views/update_profile_view.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/options_row_widget.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/profile_image_widget.dart';
 
+import '../../../core/helper/my_snackbar.dart';
 import '../../../core/translation/translation_keys.dart';
 import '../../../core/widgets/svg_wrapper.dart';
+import '../../auth/views/login_view.dart';
+import '../manager/user_cubit/user_state.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -90,29 +96,33 @@ class ProfileView extends StatelessWidget {
               height: ResponsiveHelper.h(context, height: 20),
             ),
             SizedBox(height: ResponsiveHelper.h(context, height: 20)),
-            InkWell(
-              onTap: () {
-                CacheHelper.saveData(
-                  key: CacheKeys.accessToken,
-                  value:
-                      ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0NzUxOTYwNywianRpIjoiMmI4OTY1NDAtNGFmMi00YThjLWIwYjQtNzBjYjYyMDlkYzZiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNzQ3NTE5NjA3LCJjc3JmIjoiMDZjMjljYWEtYTY1ZS00M2M4LWI0YjYtOTg4NzBhMTY1ZTM2IiwiZXhwIjoxNzQ3NTIwNTA3fQ.Sr5yzehbTNNzdxXDy7zAVsp99JDPFdG_lEzrULg0k7s',
-                );
-                CacheData.accessToken =
-                    ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0NzUxOTYwNywianRpIjoiMmI4OTY1NDAtNGFmMi00YThjLWIwYjQtNzBjYjYyMDlkYzZiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNzQ3NTE5NjA3LCJjc3JmIjoiMDZjMjljYWEtYTY1ZS00M2M4LWI0YjYtOTg4NzBhMTY1ZTM2IiwiZXhwIjoxNzQ3NTIwNTA3fQ.Sr5yzehbTNNzdxXDy7zAVsp99JDPFdG_lEzrULg0k7s';
+            BlocConsumer<UserCubit, UserState>(
+              listener: (context, state) {
+                if (state is UserLogoutState) {
+                  MySnackbar.success(context, state.message);
+                  NavHelper.pushReplaceAll(() => LoginView());
+                }
               },
-              child: Row(
-                children: [
-                  SvgWrapper(assetName: AppAssets.logoutIcon),
-                  SizedBox(width: ResponsiveHelper.w(context, width: 15)),
-                  Text(
-                    TranslationKeys.LogOut.tr,
-                    style: AppTextStyles.f18w500(
-                      context,
-                      color: AppColors.black,
-                    ),
+              builder: (context, state) {
+                return InkWell(
+                  onTap: () {
+                    UserCubit.get(context).logOut();
+                  },
+                  child: Row(
+                    children: [
+                      SvgWrapper(assetName: AppAssets.logoutIcon),
+                      SizedBox(width: ResponsiveHelper.w(context, width: 15)),
+                      Text(
+                        TranslationKeys.LogOut.tr,
+                        style: AppTextStyles.f18w500(
+                          context,
+                          color: AppColors.black,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                );
+              },
             ),
           ],
         ),

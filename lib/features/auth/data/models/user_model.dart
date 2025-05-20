@@ -35,15 +35,15 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data[ApiKeys.email] = this.email;
-    if (this.favoriteProducts != null) {
-      data[ApiKeys.favoriteProducts] = this.favoriteProducts;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data[ApiKeys.email] = email;
+    if (favoriteProducts != null) {
+      data[ApiKeys.favoriteProducts] = favoriteProducts;
     }
-    data[ApiKeys.id] = this.id;
-    data[ApiKeys.imagePath] = this.imagePath;
-    data[ApiKeys.name] = this.name;
-    data[ApiKeys.phone] = this.phone;
+    data[ApiKeys.id] = id;
+    data[ApiKeys.imagePath] = imagePath;
+    data[ApiKeys.name] = name;
+    data[ApiKeys.phone] = phone;
     return data;
   }
 }

@@ -34,7 +34,7 @@ class MainAppView extends StatelessWidget {
               centerTitle: true,
               backgroundColor: Colors.transparent,
               title:
-                  cubit.currentIndex == 2
+                  cubit.currentPageIndex == 2
                       ? Text(
                         TranslationKeys.Profile.tr,
                         style: AppTextStyles.f18w600(
@@ -48,7 +48,7 @@ class MainAppView extends StatelessWidget {
                         height: ResponsiveHelper.h(context, height: 40),
                       ),
             ),
-            body: pages[cubit.currentIndex],
+            body: pages[cubit.currentPageIndex],
             bottomNavigationBar: BottomNavigationBar(
               backgroundColor: AppColors.scaffoldBackground,
               selectedItemColor: AppColors.primary,
@@ -66,26 +66,29 @@ class MainAppView extends StatelessWidget {
                 BottomNavigationBarItem(
                   icon: SvgWrapper(
                     assetName: AppAssets.homeIcon,
-                    color: cubit.currentIndex == 0 ? AppColors.primary : null,
+                    color:
+                        cubit.currentPageIndex == 0 ? AppColors.primary : null,
                   ),
                   label: TranslationKeys.Home.tr,
                 ),
                 BottomNavigationBarItem(
                   icon: SvgWrapper(
                     assetName: AppAssets.cartIcon,
-                    color: cubit.currentIndex == 1 ? AppColors.primary : null,
+                    color:
+                        cubit.currentPageIndex == 1 ? AppColors.primary : null,
                   ),
                   label: TranslationKeys.Items.tr,
                 ),
                 BottomNavigationBarItem(
                   icon: SvgWrapper(
                     assetName: AppAssets.profileIcon,
-                    color: cubit.currentIndex == 2 ? AppColors.primary : null,
+                    color:
+                        cubit.currentPageIndex == 2 ? AppColors.primary : null,
                   ),
                   label: TranslationKeys.Profile.tr,
                 ),
               ],
-              currentIndex: cubit.currentIndex,
+              currentIndex: cubit.currentPageIndex,
               onTap: (index) {
                 cubit.changeIndex(index);
               },

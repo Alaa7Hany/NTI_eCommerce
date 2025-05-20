@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:nti_ecommerce/core/utils/app_colors.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
 import 'package:nti_ecommerce/features/auth/views/login_view.dart';
-import 'package:nti_ecommerce/features/auth/views/register_view.dart';
-import 'package:nti_ecommerce/features/home/views/main_app_view.dart';
-import 'package:nti_ecommerce/features/onboarding/views/get_started_view.dart';
+import 'package:nti_ecommerce/features/onboarding/views/splash_view.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_cubit.dart';
 
 import 'core/cache/cache_data.dart';
@@ -45,9 +43,11 @@ class MyApp extends StatelessWidget {
               color: AppColors.black,
             ),
           ),
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
         ),
 
-        home: LoginView(),
+        home: SplashView(),
       ),
     );
   }

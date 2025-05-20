@@ -33,6 +33,9 @@ abstract class TranslationKeys {
   static const String buttonyouagreetothepublicoffer =
       ' button, you agree to the public offer';
 
+  static const String DontHaveACoount = 'Don\'t have an account?';
+  static const String AlreadyHaveAnAccount = 'Already have an account?';
+
   ///////////////--Validations--//////////////////
   static const String NameRequired = 'Name is required';
   static const String NameLength = 'Name must be at least 3 characters long';
@@ -60,4 +63,11 @@ abstract class TranslationKeys {
   static const String Items = 'Items';
   static const String Save = 'Save';
   static const String Language = 'Language';
+  static const String DeleteAccount = 'Delete Account';
+
+  /////////////--Home--//////////////////////
+  static const String SearchanyProduct = 'Search any Product..';
+  static const String AllFeatured = 'All Featured';
+  static const String Recommended = 'Recommended';
+  static const String AndMore = 'And More !!';
 }

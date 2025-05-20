@@ -11,6 +11,9 @@ class MyButton extends StatelessWidget {
     this.textStyle,
     this.radius = 5,
     this.isLoading = false,
+    this.color = AppColors.primary,
+    this.textColor = AppColors.white,
+    this.borderColor,
   });
 
   final String title;
@@ -18,6 +21,9 @@ class MyButton extends StatelessWidget {
   final TextStyle? textStyle;
   final double radius;
   final bool isLoading;
+  final Color color;
+  final Color textColor;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +34,18 @@ class MyButton extends StatelessWidget {
         onPressed: onPressed,
 
         style: ElevatedButton.styleFrom(
-          backgroundColor: isLoading ? AppColors.grey : AppColors.primary,
+          backgroundColor: isLoading ? AppColors.grey : color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               ResponsiveHelper.w(context, width: radius),
             ),
           ),
+          side:
+              borderColor != null
+                  ? BorderSide(color: borderColor!, width: 1)
+                  : null,
         ),
+
         child:
             isLoading
                 ? CircularProgressIndicator(
@@ -44,7 +55,7 @@ class MyButton extends StatelessWidget {
                 : Text(
                   title,
                   style: (textStyle ?? AppTextStyles.f20w600(context)).copyWith(
-                    color: AppColors.white,
+                    color: textColor,
                   ),
                 ),
       ),

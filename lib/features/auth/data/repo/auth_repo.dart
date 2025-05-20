@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nti_ecommerce/core/cache/cache_data.dart';
 import 'package:nti_ecommerce/core/cache/cache_helper.dart';
@@ -65,7 +64,16 @@ class AuthRepo {
       LoginResponseModel loginResponseModel = LoginResponseModel.fromJson(
         apiResponse.data,
       );
-      UserRepo().userModel = loginResponseModel.user!;
+      // Assign all the data to the user model in the user repo
+      // as the UserCubit model is assigned to the user model in the user repo
+      UserRepo().userModel.id = loginResponseModel.user!.id;
+      UserRepo().userModel.name = loginResponseModel.user!.name;
+      UserRepo().userModel.email = loginResponseModel.user!.email;
+      UserRepo().userModel.phone = loginResponseModel.user!.phone;
+      UserRepo().userModel.imageFile = loginResponseModel.user!.imageFile;
+      UserRepo().userModel.favoriteProducts =
+          loginResponseModel.user!.favoriteProducts;
+      UserRepo().userModel.imagePath = loginResponseModel.user!.imagePath;
       CacheHelper.saveData(
         key: CacheKeys.accessToken,
         value: loginResponseModel.accessToken,

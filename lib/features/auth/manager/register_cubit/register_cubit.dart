@@ -39,8 +39,9 @@ class RegisterCubit extends Cubit<RegisterState> {
             emit(RegisterSuccess(success));
           },
         );
+      } else {
+        emit(RegisterError(TranslationKeys.fillAllFields.tr));
       }
-      emit(RegisterError(TranslationKeys.fillAllFields.tr));
     });
   }
 

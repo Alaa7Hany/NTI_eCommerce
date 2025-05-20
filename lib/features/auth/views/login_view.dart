@@ -13,6 +13,7 @@ import 'package:nti_ecommerce/features/home/views/main_app_view.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../manager/login_cubit/login_state.dart';
+import 'register_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -99,6 +100,31 @@ class LoginView extends StatelessWidget {
                               },
                             );
                           },
+                        ),
+                        SizedBox(
+                          height: ResponsiveHelper.h(context, height: 20),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              TranslationKeys.DontHaveACoount.tr,
+                              style: AppTextStyles.f14w600(
+                                context,
+                              ).copyWith(color: AppColors.grey),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                NavHelper.pushReplace(() => RegisterView());
+                              },
+                              child: Text(
+                                TranslationKeys.Register.tr,
+                                style: AppTextStyles.f14w600(
+                                  context,
+                                ).copyWith(color: AppColors.primary),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

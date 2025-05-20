@@ -13,10 +13,8 @@ import 'package:nti_ecommerce/core/widgets/my_button.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
 import 'package:nti_ecommerce/features/home/views/main_app_view.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_cubit.dart';
-import 'package:nti_ecommerce/features/profile/views/profile_view.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/profile_image_widget.dart';
 
-import '../../../core/utils/app_colors.dart';
 import '../../../core/widgets/my_appbar.dart';
 import '../manager/user_cubit/user_state.dart';
 

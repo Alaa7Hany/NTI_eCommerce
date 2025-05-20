@@ -6,6 +6,17 @@ import '../helper/responsive.dart';
 abstract class AppTextStyles {
   static const String fontFamily = 'Montserrat';
 
+  static TextStyle f10w400(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 10),
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
+
   static TextStyle f12w400(
     BuildContext context, {
     Color color = AppColors.black,
@@ -39,6 +50,17 @@ abstract class AppTextStyles {
     );
   }
 
+  static TextStyle f14w400(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 14),
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
+
   static TextStyle f14w600(
     BuildContext context, {
     Color color = AppColors.black,
@@ -50,12 +72,12 @@ abstract class AppTextStyles {
     );
   }
 
-  static TextStyle f14w400(
+  static TextStyle f15w400(
     BuildContext context, {
     Color color = AppColors.black,
   }) {
     return TextStyle(
-      fontSize: ResponsiveHelper.sp(context, fontSize: 14),
+      fontSize: ResponsiveHelper.sp(context, fontSize: 15),
       fontWeight: FontWeight.w400,
       color: color,
     );
@@ -112,6 +134,17 @@ abstract class AppTextStyles {
     return TextStyle(
       fontSize: ResponsiveHelper.sp(context, fontSize: 20),
       fontWeight: FontWeight.w600,
+      color: color,
+    );
+  }
+
+  static TextStyle f20w700(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 20),
+      fontWeight: FontWeight.w700,
       color: color,
     );
   }

@@ -16,4 +16,5 @@ abstract class AppColors {
   static const Color textFieldFilling = Color(0xffF3F3F3);
   static const Color darkGrey = Color(0xff676767);
   static const Color pink = Color(0xffFFCCD5);
+  static const Color darkBag = Color(0xff21003D);
 }

@@ -25,23 +25,28 @@ class UserUpdateErrorState extends UserState {
   UserUpdateErrorState(this.error);
 }
 
-class UserImageLoadingState extends UserState {}
-
 class UserImageSuccessState extends UserState {
   final String imagePath;
   UserImageSuccessState(this.imagePath);
 }
 
-class UserImageErrorState extends UserState {
-  final String error;
-  UserImageErrorState(this.error);
-}
-
-class UserImagePickedState extends UserState {
-  final XFile imageFile;
-  UserImagePickedState(this.imageFile);
-}
-
 class UserLanguageState extends UserState {
   UserLanguageState();
+}
+
+class UserDeleteLoadingState extends UserState {}
+
+class UserDeleteSuccessState extends UserState {
+  final String message;
+  UserDeleteSuccessState(this.message);
+}
+
+class UserDeleteErrorState extends UserState {
+  final String error;
+  UserDeleteErrorState(this.error);
+}
+
+class UserLogoutState extends UserState {
+  final String message;
+  UserLogoutState(this.message);
 }

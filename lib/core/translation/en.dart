@@ -26,6 +26,9 @@ Map<String, String> en = {
   TranslationKeys.buttonyouagreetothepublicoffer:
       ' button, you agree\nto the public offer',
 
+  TranslationKeys.DontHaveACoount: 'Don\'t have an account?',
+  TranslationKeys.AlreadyHaveAnAccount: 'Already have an account?',
+
   ///////////////--Validations--//////////////////
   TranslationKeys.NameRequired: 'Name is required',
   TranslationKeys.NameLength: 'Name must be at least 3 characters long',
@@ -51,6 +54,13 @@ Map<String, String> en = {
   TranslationKeys.Items: 'Items',
   TranslationKeys.Save: 'Save',
   TranslationKeys.Language: 'Language',
+  TranslationKeys.DeleteAccount: 'Delete Account',
 
   ///////////////////////////////////////////////
+
+  /////////////--Home--//////////////////////
+  TranslationKeys.SearchanyProduct: 'Search any Product..',
+  TranslationKeys.Recommended: 'Recommended',
+  TranslationKeys.AllFeatured: 'All Featured',
+  TranslationKeys.AndMore: 'And More !!',
 };

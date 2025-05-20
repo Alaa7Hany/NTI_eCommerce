@@ -160,6 +160,31 @@ class RegisterView extends StatelessWidget {
                             );
                           },
                         ),
+                        SizedBox(
+                          height: ResponsiveHelper.h(context, height: 20),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              TranslationKeys.AlreadyHaveAnAccount.tr,
+                              style: AppTextStyles.f14w600(
+                                context,
+                              ).copyWith(color: AppColors.grey),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                NavHelper.pushReplace(() => LoginView());
+                              },
+                              child: Text(
+                                TranslationKeys.Login.tr,
+                                style: AppTextStyles.f14w600(
+                                  context,
+                                ).copyWith(color: AppColors.primary),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

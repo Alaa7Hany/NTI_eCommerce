@@ -13,4 +13,5 @@ abstract class ApiKeys {
   static const String id = 'id';
   static const String imagePath = 'image_path';
   static const String favoriteProducts = 'favorite_products';
+  static const String productId = 'product_id';
 }
