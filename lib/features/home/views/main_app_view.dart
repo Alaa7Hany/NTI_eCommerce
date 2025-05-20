@@ -12,7 +12,10 @@ import 'package:nti_ecommerce/features/home/views/items_view.dart';
 import 'package:nti_ecommerce/features/profile/views/profile_view.dart';
 
 import '../../../core/translation/translation_keys.dart';
+import '../manager/best_seller_cubit/best_seller_cubit.dart';
+import '../manager/categories_cubit/categories_cubit.dart';
 import '../manager/home_cubit/home_state.dart';
+import '../manager/sliders_cubit/sliders_cubit.dart';
 
 final List<Widget> pages = [HomeView(), ItemsView(), ProfileView()];
 
@@ -21,8 +24,13 @@ class MainAppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CategoriesCubit()..getCategories()),
+        BlocProvider(create: (context) => SlidersCubit()..getSliders()),
+        BlocProvider(create: (context) => BestSellerCubit()..getBestSellers()),
+        BlocProvider(create: (context) => HomeCubit()),
+      ],
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           // TODO: implement listener

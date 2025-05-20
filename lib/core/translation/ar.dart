@@ -54,6 +54,7 @@ Map<String, String> ar = {
   TranslationKeys.Save: 'حفظ',
   TranslationKeys.Language: 'اللغة',
   TranslationKeys.DeleteAccount: 'حذف الحساب',
+  TranslationKeys.NoFavouritesYet: 'لا توجد مفضلات حتى الآن',
 
   ///////////////////////////////////////////////
 
@@ -64,4 +65,6 @@ Map<String, String> ar = {
 
   TranslationKeys.AllFeatured: 'جميع المميزات',
   TranslationKeys.AndMore: 'و المزيد !!',
+  TranslationKeys.AddToCart: 'أضف إلى السلة',
+  TranslationKeys.Search: 'بحث',
 };

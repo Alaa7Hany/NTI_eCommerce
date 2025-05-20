@@ -147,6 +147,7 @@ class ApiHelper {
     Map<String, dynamic>? data,
     bool isFormData = true,
     bool isProtected = true,
+    Map<String, dynamic>? query,
   }) async {
     return ApiResponse.fromResponse(
       await dio.get(
@@ -157,6 +158,7 @@ class ApiHelper {
             if (isProtected) 'Authorization': 'Bearer ${CacheData.accessToken}',
           },
         ),
+        queryParameters: query,
       ),
     );
   }

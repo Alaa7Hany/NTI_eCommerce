@@ -1,6 +1,6 @@
 import 'package:nti_ecommerce/core/helper/my_logger.dart';
 
-import 'product_model.dart';
+import '../../../../core/data/models/product_model.dart';
 
 class CategoriesResponseModel {
   List<CategoryModel>? categories;
@@ -33,7 +33,7 @@ class CategoryModel {
   String? description;
   int? id;
   String? imagePath;
-  List<Products>? products;
+  List<ProductModel>? products;
   String? title;
 
   CategoryModel({
@@ -52,10 +52,10 @@ class CategoryModel {
     imagePath = json['image_path'];
 
     if (json['products'] != null) {
-      products = <Products>[];
+      products = <ProductModel>[];
 
       json['products'].forEach((v) {
-        products!.add(new Products.fromJson(v));
+        products!.add(new ProductModel.fromJson(v));
       });
     }
     title = json['title'];

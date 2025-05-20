@@ -6,10 +6,12 @@ import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
+import 'package:nti_ecommerce/core/widgets/my_appbar.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
 import 'package:nti_ecommerce/features/auth/manager/login_cubit/login_cubit.dart';
 import 'package:nti_ecommerce/features/home/views/main_app_view.dart';
+import 'package:nti_ecommerce/main.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../manager/login_cubit/login_state.dart';
@@ -27,17 +29,7 @@ class LoginView extends StatelessWidget {
           builder: (context) {
             var cubit = LoginCubit.get(context);
             return Scaffold(
-              appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                centerTitle: true,
-                leading: IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-              ),
+              appBar: MyAppBar.appBar(),
               body: Form(
                 key: cubit.formKey,
                 child: SingleChildScrollView(
@@ -117,6 +109,11 @@ class LoginView extends StatelessWidget {
                               onPressed: () {
                                 NavHelper.pushReplace(() => RegisterView());
                               },
+                              style: ButtonStyle(
+                                overlayColor: WidgetStateProperty.all(
+                                  Colors.transparent,
+                                ),
+                              ),
                               child: Text(
                                 TranslationKeys.Register.tr,
                                 style: AppTextStyles.f14w600(

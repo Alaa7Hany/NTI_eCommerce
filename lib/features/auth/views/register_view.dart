@@ -5,6 +5,7 @@ import 'package:nti_ecommerce/core/helper/my_snackbar.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/translation/translation_keys.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
+import 'package:nti_ecommerce/core/widgets/my_appbar.dart';
 import 'package:nti_ecommerce/core/widgets/my_button.dart';
 import 'package:nti_ecommerce/core/widgets/my_text_field.dart';
 import 'package:nti_ecommerce/features/auth/views/login_view.dart';
@@ -25,17 +26,7 @@ class RegisterView extends StatelessWidget {
           builder: (context) {
             var cubit = RegisterCubit.get(context);
             return Scaffold(
-              appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                centerTitle: true,
-                leading: IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-              ),
+              appBar: MyAppBar.appBar(),
               body: Form(
                 key: cubit.formKey,
                 child: SingleChildScrollView(
@@ -176,6 +167,11 @@ class RegisterView extends StatelessWidget {
                               onPressed: () {
                                 NavHelper.pushReplace(() => LoginView());
                               },
+                              style: ButtonStyle(
+                                overlayColor: WidgetStateProperty.all(
+                                  Colors.transparent,
+                                ),
+                              ),
                               child: Text(
                                 TranslationKeys.Login.tr,
                                 style: AppTextStyles.f14w600(

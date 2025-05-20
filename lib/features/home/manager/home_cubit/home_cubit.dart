@@ -9,9 +9,9 @@ class HomeCubit extends Cubit<HomeState> {
   static HomeCubit get(context) => BlocProvider.of(context);
 
   TextEditingController searchController = TextEditingController();
+  FocusNode searchFocusNode = FocusNode();
 
   int currentPageIndex = 0;
-  int choosenCategoryIndex = -1;
   int currentSliderIndex = 0;
 
   void changeIndex(int index) {

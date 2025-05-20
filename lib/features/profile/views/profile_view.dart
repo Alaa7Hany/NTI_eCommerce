@@ -1,18 +1,14 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:nti_ecommerce/core/cache/cache_data.dart';
-import 'package:nti_ecommerce/core/cache/cache_helper.dart';
-import 'package:nti_ecommerce/core/cache/cache_keys.dart';
-import 'package:nti_ecommerce/core/helper/my_logger.dart';
+
 import 'package:nti_ecommerce/core/helper/nav_helper.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/utils/app_assets.dart';
 import 'package:nti_ecommerce/core/utils/app_colors.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
 import 'package:nti_ecommerce/features/profile/manager/user_cubit/user_cubit.dart';
+import 'package:nti_ecommerce/features/profile/views/favourites_view.dart';
 import 'package:nti_ecommerce/features/profile/views/settings_view.dart';
 import 'package:nti_ecommerce/features/profile/views/update_profile_view.dart';
 import 'package:nti_ecommerce/features/profile/views/widgets/options_row_widget.dart';
@@ -43,7 +39,7 @@ class ProfileView extends StatelessWidget {
       {
         'icon': AppAssets.favouriteIcon,
         'title': TranslationKeys.MyFavorites.tr,
-        'navTo': UpdateProfileView(),
+        'navTo': FavouritesView(),
       },
       {
         'icon': AppAssets.settingsIcon,

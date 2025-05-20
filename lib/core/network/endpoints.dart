@@ -13,4 +13,5 @@ abstract class EndPoints {
   static const String addProductToFavourite = 'add_to_favorite';
   static const String bestSellerProducts = 'best_seller_products';
   static const String topRatedProducts = 'top_rated_products';
+  static const String searchProducts = 'products/search';
 }

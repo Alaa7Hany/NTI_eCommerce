@@ -1,6 +1,9 @@
-import '../../../../core/helper/my_logger.dart';
+import 'package:flutter/foundation.dart';
+import 'package:nti_ecommerce/features/home/data/models/category_response_model.dart';
 
-class Products {
+import '../../helper/my_logger.dart';
+
+class ProductModel {
   int? bestSeller;
   String? description;
   int? id;
@@ -9,8 +12,9 @@ class Products {
   String? name;
   double? price;
   double? rating;
+  CategoryModel? category;
 
-  Products({
+  ProductModel({
     this.bestSeller,
     this.description,
     this.id,
@@ -21,7 +25,7 @@ class Products {
     this.rating,
   });
 
-  Products.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String, dynamic> json) {
     bestSeller = json['best_seller'];
     description = json['description'];
 
@@ -31,7 +35,9 @@ class Products {
     isFavorite = json['is_favorite'];
     name = json['name'];
     price = json['price'];
-
+    if (json['category'] != null) {
+      category = CategoryModel.fromJson(json['category']);
+    }
     rating = json['rating'];
   }
 

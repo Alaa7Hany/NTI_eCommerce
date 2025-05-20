@@ -64,10 +64,15 @@ abstract class TranslationKeys {
   static const String Save = 'Save';
   static const String Language = 'Language';
   static const String DeleteAccount = 'Delete Account';
+  static const String NoFavouritesYet = 'No Favourites Yet';
 
   /////////////--Home--//////////////////////
   static const String SearchanyProduct = 'Search any Product..';
   static const String AllFeatured = 'All Featured';
   static const String Recommended = 'Recommended';
   static const String AndMore = 'And More !!';
+  static const String AddToCart = 'Add To Cart';
+  static const String Search = 'Search';
+  static const String NoResultsFound = 'No Results Found';
+  static const String ProductAddedToCart = 'Product Added To Cart Successfully';
 }

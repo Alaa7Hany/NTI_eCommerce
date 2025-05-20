@@ -6,6 +6,7 @@ abstract class AppColors {
   static const Color black = Color(0xff000000);
   static const Color grey = Color(0xffA8A8A9);
   static const Color lightGrey = Color(0xffC4C4C4);
+  static const Color lightLightGrey = Color(0xffD9D9D9);
   static const Color white = Color(0xffFFFFFF);
   static const Color lightWhite = Color(0xffF2F2F2);
   static const Color sliderColor = Color(0xff17223B);
@@ -17,4 +18,6 @@ abstract class AppColors {
   static const Color darkGrey = Color(0xff676767);
   static const Color pink = Color(0xffFFCCD5);
   static const Color darkBag = Color(0xff21003D);
+  static const Color yellow = Color(0xffEDB310);
+  static const Color darkBrown = Color(0xff391713);
 }

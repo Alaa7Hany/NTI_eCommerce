@@ -6,7 +6,7 @@ import '../../data/repo/categories_repo.dart';
 class CategoriesCubit extends Cubit<CategoriesState> {
   CategoriesCubit() : super(CategoriesInitial());
   static CategoriesCubit get(context) => BlocProvider.of(context);
-
+  int choosenIndex = 0;
   void getCategories() async {
     emit(CategoriesLoading());
 
@@ -23,5 +23,10 @@ class CategoriesCubit extends Cubit<CategoriesState> {
         }
       },
     );
+  }
+
+  void changeCategory(int index) {
+    choosenIndex = index;
+    emit(CategoriesLoaded(CategoriesRepo().categories));
   }
 }

@@ -5,11 +5,12 @@ import '../utils/app_assets.dart';
 import 'my_rotator.dart';
 
 class MyAppBar {
-  static AppBar appBar({String? title}) {
+  static AppBar appBar({String? title, TextStyle? titleStyle}) {
     return AppBar(
       centerTitle: true,
       backgroundColor: Colors.transparent,
-      title: Text(title ?? ''),
+      title: Text(title ?? '', style: titleStyle),
+
       // Rotate the arrow in case of language change
       leading: InkWell(
         onTap: () {

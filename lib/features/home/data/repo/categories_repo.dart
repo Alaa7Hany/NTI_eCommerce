@@ -15,7 +15,7 @@ class CategoriesRepo {
     return _instance;
   }
   CategoriesRepo._init();
-
+  List<CategoryModel> categories = [];
   // get categories
   Future<Either<String, List<CategoryModel>>> getCategories() async {
     try {
@@ -28,6 +28,7 @@ class CategoriesRepo {
           CategoriesResponseModel.fromJson(apiResponse.data);
 
       if (apiResponse.status) {
+        categories = categoryResponseModel.categories!;
         return Right(categoryResponseModel.categories!);
       } else {
         throw Exception('Error fetching categories');

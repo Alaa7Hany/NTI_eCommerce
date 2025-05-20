@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nti_ecommerce/core/helper/responsive.dart';
 import 'package:nti_ecommerce/core/utils/app_colors.dart';
 import 'package:nti_ecommerce/core/utils/app_text_styles.dart';
+import 'package:nti_ecommerce/core/widgets/svg_wrapper.dart';
 
 class MyButton extends StatelessWidget {
   const MyButton({
@@ -14,6 +15,7 @@ class MyButton extends StatelessWidget {
     this.color = AppColors.primary,
     this.textColor = AppColors.white,
     this.borderColor,
+    this.icon,
   });
 
   final String title;
@@ -24,6 +26,7 @@ class MyButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final Color? borderColor;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class MyButton extends StatelessWidget {
       width: double.infinity,
       height: ResponsiveHelper.h(context, height: 55),
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: isLoading ? null : onPressed,
 
         style: ElevatedButton.styleFrom(
           backgroundColor: isLoading ? AppColors.grey : color,
@@ -52,11 +55,25 @@ class MyButton extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   color: AppColors.primary,
                 )
-                : Text(
-                  title,
-                  style: (textStyle ?? AppTextStyles.f20w600(context)).copyWith(
-                    color: textColor,
-                  ),
+                : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    icon != null
+                        ? Container(
+                          margin: EdgeInsetsDirectional.only(end: 10),
+                          child: SvgWrapper(
+                            assetName: icon!,
+                            color: AppColors.white,
+                          ),
+                        )
+                        : const SizedBox(),
+
+                    Text(
+                      title,
+                      style: (textStyle ?? AppTextStyles.f20w600(context))
+                          .copyWith(color: textColor),
+                    ),
+                  ],
                 ),
       ),
     );
