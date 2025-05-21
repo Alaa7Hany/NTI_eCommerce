@@ -50,6 +50,17 @@ abstract class AppTextStyles {
     );
   }
 
+  static TextStyle f14w300(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 14),
+      fontWeight: FontWeight.w300,
+      color: color,
+    );
+  }
+
   static TextStyle f14w400(
     BuildContext context, {
     Color color = AppColors.black,
@@ -83,6 +94,28 @@ abstract class AppTextStyles {
     );
   }
 
+  static TextStyle f15w500(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 15),
+      fontWeight: FontWeight.w500,
+      color: color,
+    );
+  }
+
+  static TextStyle f16w400(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 16),
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
+
   static TextStyle f16w500(
     BuildContext context, {
     Color color = AppColors.black,
@@ -101,6 +134,28 @@ abstract class AppTextStyles {
     return TextStyle(
       fontSize: ResponsiveHelper.sp(context, fontSize: 16),
       fontWeight: FontWeight.w600,
+      color: color,
+    );
+  }
+
+  static TextStyle f17w400(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 17),
+      fontWeight: FontWeight.w400,
+      color: color,
+    );
+  }
+
+  static TextStyle f17w500(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 17),
+      fontWeight: FontWeight.w500,
       color: color,
     );
   }
@@ -189,6 +244,17 @@ abstract class AppTextStyles {
     return TextStyle(
       fontSize: ResponsiveHelper.sp(context, fontSize: 24),
       fontWeight: FontWeight.w800,
+      color: color,
+    );
+  }
+
+  static TextStyle f30w500(
+    BuildContext context, {
+    Color color = AppColors.black,
+  }) {
+    return TextStyle(
+      fontSize: ResponsiveHelper.sp(context, fontSize: 30),
+      fontWeight: FontWeight.w500,
       color: color,
     );
   }

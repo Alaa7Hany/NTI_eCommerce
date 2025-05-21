@@ -18,6 +18,7 @@ import '../../../core/helper/my_snackbar.dart';
 import '../../../core/translation/translation_keys.dart';
 import '../../../core/widgets/svg_wrapper.dart';
 import '../../auth/views/login_view.dart';
+import '../../my_orders/views/my_orders_view.dart';
 import '../manager/user_cubit/user_state.dart';
 
 class ProfileView extends StatelessWidget {
@@ -34,7 +35,7 @@ class ProfileView extends StatelessWidget {
       {
         'icon': AppAssets.bagIcon,
         'title': TranslationKeys.MyOrders.tr,
-        'navTo': UpdateProfileView(),
+        'navTo': MyOrdersView(),
       },
       {
         'icon': AppAssets.favouriteIcon,

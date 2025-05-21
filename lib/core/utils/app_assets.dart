@@ -21,4 +21,5 @@ abstract class AppAssets {
   static const String profileIcon = '${_basePath}profile_icon.svg';
   static const String settingsIcon = '${_basePath}settings_icon.svg';
   static const String profileImage = '${_basePath}profile_image.png';
+  static const String emptyOrders = '${_basePath}empty_orders.svg';
 }

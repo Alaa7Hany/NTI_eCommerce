@@ -35,7 +35,7 @@ class ItemsView extends StatelessWidget {
                   );
                 } else if (state is CategoriesLoaded) {
                   return SizedBox(
-                    height: ResponsiveHelper.h(context, height: 100),
+                    height: ResponsiveHelper.h(context, height: 120),
                     child: CategoriesRow(
                       categories: state.categories,
                       onCategoryPressed: (index) {
